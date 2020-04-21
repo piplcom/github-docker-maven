@@ -6,7 +6,6 @@ MAINTAINER "Pipl"
 ENV M2_HOME=/usr/share/maven
 
 
-ADD .gitconfig /tmp/.gitconfig
 ADD entrypoint.sh /tmp/entrypoint.sh
 RUN chmod +x  ./tmp/entrypoint.sh
 
