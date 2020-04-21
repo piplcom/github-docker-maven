@@ -6,9 +6,8 @@ MAINTAINER "Pipl"
 ENV M2_HOME=/usr/share/maven
 
 
-ADD entrypoint.sh /tmp/entrypoint.sh
-RUN chmod +x  ./tmp/entrypoint.sh
-
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x  /entrypoint.sh
 COPY settings-docker.xml /root/.m2/settings.xml
 
-ENTRYPOINT [ "/tmp/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]

@@ -2,9 +2,6 @@
 
 echo "Trying to copy git credentials file"
 
-cd /tmp
-git init
-
 set -x
 
 git config --global user.email ${GITHUB_USER_EMAIL}
@@ -12,9 +9,7 @@ git config --global user.name ${GITHUB_USERNAME}
 git config --global user.password ${GITHUB_PASSWORD}
 
 echo http://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com > /root/.git-credentials
-
 cp .gitconfig /root/.gitconfig
-
 git config credential.helper --file .git-credentials
 
 sed -i -e "s/\${GITHUB_USERNAME}/${GITHUB_USERNAME}/" /root/.m2/settings.xml
