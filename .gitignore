@@ -1,0 +1,6 @@
+.git-credentials
+.gitconfig
+id_rsa_pipldocker
+id_rsa_pipldocker.pub
+./kubernetes/configmaps
+docker-compose.override.yaml

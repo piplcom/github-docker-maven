@@ -1,0 +1,4 @@
+Maven docker authenticated.
+
+GITHUB_USERNAME
+GITHUB_PASSWORD
