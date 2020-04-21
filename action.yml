@@ -1,0 +1,30 @@
+# action.yml
+name: 'MVN Action'
+author: 'yuri ritvin <yuri.ritvin@Pipl.com>'
+description: 'MVN with docker and github support'
+inputs:
+  command:  # id of input
+    description: 'Commands to run'
+    required: true
+  docker-login-username:  # Docker login username
+    description: 'docker login username'
+    required: false
+  docker-login-password:  # Docker login password
+    description: 'docker login password'
+    required: false
+  docker-registry:  # Docker registry
+    description: 'docker registry'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.docker-login-username }}
+    - ${{ inputs.docker-login-password }}
+    - ${{ inputs.docker-registry }}
+
+branding:
+  icon: 'package'
+  color: 'blue'
